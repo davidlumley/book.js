@@ -3,7 +3,6 @@ $ ->
 		current	= 0
 		$el		= $(@)
 		$pages	= $el.find('.page')
-		console.log $pages
 		
 		next_page = ->
 			if (current + 1) >= $pages.length
@@ -29,8 +28,6 @@ $ ->
 			e.preventDefault()
 			key_code = e.keyCode
 			
-			console.log "from page number #{current}"
-			
 			if key_code in [37, 38, 39, 40]
 				$($pages[current]).removeClass 'active'
 				
@@ -39,7 +36,5 @@ $ ->
 				
 			if key_code in [39, 40]
 				$($pages[next_page()]).addClass 'active'
-			
-			console.log "to page number #{current}"
 		
 	
