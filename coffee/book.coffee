@@ -15,12 +15,18 @@ $ ->
 				 return current = $pages.length - 1
 			current = current - 1
 		
-		# left, up
-		# 37, 38
-		# right, down
-		# 39, 40
+		$el.on 'click', '#next_page', (e) =>
+			e.preventDefault()
+			$($pages[current]).removeClass 'active'
+			$($pages[next_page()]).addClass 'active'
+		
+		$el.on 'click', '#previous_page', (e) =>
+			e.preventDefault()
+			$($pages[current]).removeClass 'active'
+			$($pages[previous_page()]).addClass 'active'
 		
 		$el.on 'keydown', (e) =>
+			e.preventDefault()
 			key_code = e.keyCode
 			
 			console.log "from page number #{current}"
@@ -36,6 +42,4 @@ $ ->
 			
 			console.log "to page number #{current}"
 		
-		
 	
-	$('body').book()
