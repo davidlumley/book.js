@@ -1,0 +1,24 @@
+.page {
+  display: none; }
+  .page.active {
+    display: block; }
+
+.page {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 3px 0 black;
+  -moz-box-shadow: 0 1px 3px 0 black;
+  -ms-box-shadow: 0 1px 3px 0 black;
+  -o-box-shadow: 0 1px 3px 0 black;
+  box-shadow: 0 1px 3px 0 black; }
+  .page header, .page section {
+    padding: 10px 30px; }

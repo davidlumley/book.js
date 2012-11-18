@@ -1,0 +1,28 @@
+$page-margin-desktop	: 10px;
+$page-margin-tablet		: 10px;
+$page-margin-mobile		: 2px;
+
+$page-width-desktop		: 600px;
+$page-width-tablet		: 600px;
+$page-width-mobile		: 300px;
+
+.page {
+	display				: none;
+	&.active {
+		display			: block;
+	}
+}
+
+.page {
+	width					: $page-width-desktop;
+	
+	margin				: 0 auto;
+	margin-bottom	: $page-margin-desktop * 5;
+	
+	@include border-radius(2px);
+	@include box-shadow(3px, 0, 1px);
+	
+	header, section {
+		padding			: $page-margin-desktop $page-margin-desktop * 3;
+	}
+}

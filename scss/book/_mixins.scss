@@ -1,0 +1,25 @@
+@mixin box-shadow(
+	$shadow-distance					: 1px,
+	$x-distance								: 0px,
+	$y-distance								: 1px
+){
+	-webkit-box-shadow				: $x-distance $y-distance $shadow-distance 0 #000;
+	-moz-box-shadow						: $x-distance $y-distance $shadow-distance 0 #000;
+	-ms-box-shadow						: $x-distance $y-distance $shadow-distance 0 #000;
+	-o-box-shadow							: $x-distance $y-distance $shadow-distance 0 #000;
+	box-shadow								: $x-distance $y-distance $shadow-distance 0 #000;
+}
+
+@mixin border-radius(
+	$radius 									: 5px
+){
+	-webkit-border-radius			: $radius;
+	-moz-border-radius				: $radius;
+	-ms-border-radius					: $radius;
+	-o-border-radius					: $radius;
+	border-radius							: $radius;
+
+	-moz-background-clip			: padding;
+	-webkit-background-clip		: padding-box;
+	background-clip						: padding-box;
+}
