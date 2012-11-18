@@ -2,7 +2,7 @@ $ ->
 	$.fn.book = (options) ->
 		current	= 0
 		$el		= $(@)
-		$pages	= $el.find('.page')
+		$pages	= $el.find('.page').toArray()
 		
 		next_page = ->
 			if (current + 1) >= $pages.length
@@ -13,6 +13,16 @@ $ ->
 			if (current - 1) < 0
 				 return current = $pages.length - 1
 			current = current - 1
+		
+		$el.on 'click', 'a[data-action=navigate]', (e) ->
+			e.preventDefault()
+			
+			$($pages[current]).removeClass 'active'
+			$next_el = $($(e.currentTarget).attr('href'))
+			$next_el.addClass 'active'
+			
+			current = $pages.indexOf($next_el[0])
+			
 		
 		$el.on 'click', '#next_page', (e) =>
 			e.preventDefault()
