@@ -35,10 +35,10 @@ $ ->
 			$($pages[previous_page()]).addClass 'active'
 		
 		$el.on 'keydown', (e) =>
-			e.preventDefault()
 			key_code = e.keyCode
 			
 			if key_code in [37, 38, 39, 40]
+				e.preventDefault()
 				$($pages[current]).removeClass 'active'
 				
 			if key_code in [37, 38]
